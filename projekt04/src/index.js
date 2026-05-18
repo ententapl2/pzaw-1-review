@@ -23,7 +23,7 @@ import setGameState from "./middlewares/setGameState.js";
 import preventPostParamsError from "./middlewares/postParamsEmpty.js";
 import setUser from "./middlewares/setUser.js";
 import ErrorHandler from "./middlewares/ErrorHandler.js";
-import SqliteSessionStore from "./utils/sqliteSessionStore.js";
+import SqliteSessionStore from "./utils/SqliteSessionStore.js";
 
 const wordModel = new WordModel();
 const userModel = new UserModel();
