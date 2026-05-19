@@ -41,10 +41,4 @@ export function createDBTables() {
             ) STRICT;
             `);
 
-    return db;
 }
-
-export default {
-    db,
-    createDBTables
-};

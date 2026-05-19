@@ -6,7 +6,7 @@ import { fileURLToPath } from "node:url";
 
 import { SECRET, PORT } from "../config.js";
 
-import { createDBTables } from "./database/createDatabase.js";
+import { createDBTables, db } from "./database/createDatabase.js";
 import WordModel from "./models/WordModel.js";
 import UserModel from "./models/UserModel.js";
 import WordService from "./services/WordService.js";
@@ -38,7 +38,7 @@ const categoryRouter = new CategoryRouter(wordService, authService).getRouter();
 const homeHandler = new HomeController(wordService).get;
 
 
-const db = createDBTables();
+createDBTables();
 userModel.init();
 wordModel.init();
 
