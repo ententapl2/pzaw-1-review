@@ -12,7 +12,7 @@ export default class UserModel {
     #get_default_role_id;
     #get_default_admin_role_id;
 
-    init() {
+    constructor() {
         this.#get_user_by_id = db.prepare(`SELECT id, username, passhash, role_id FROM users WHERE id = ?`);
         this.#get_user_by_username = db.prepare(`SELECT id, passhash, role_id FROM users WHERE username = ?`);
         this.#get_users_by_role_id = db.prepare(`SELECT id, username FROM users WHERE role_id = ?`);

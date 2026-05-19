@@ -20,7 +20,7 @@ export default class WordModel {
     #delete_category_by_id;
 
 
-    init() {
+    constructor() {
         this.#get_categories = db.prepare(`SELECT id, name FROM categories`);
         this.#get_word_by_id = db.prepare(`
             SELECT words.id AS id, words.name AS name, words.category_id AS category_id, 

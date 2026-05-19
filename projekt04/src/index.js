@@ -25,6 +25,8 @@ import setUser from "./middlewares/setUser.js";
 import ErrorHandler from "./middlewares/ErrorHandler.js";
 import SqliteSessionStore from "./utils/SqliteSessionStore.js";
 
+
+createDBTables();
 const wordModel = new WordModel();
 const userModel = new UserModel();
 
@@ -38,9 +40,6 @@ const categoryRouter = new CategoryRouter(wordService, authService).getRouter();
 const homeHandler = new HomeController(wordService).get;
 
 
-createDBTables();
-userModel.init();
-wordModel.init();
 
 const app = express();
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
