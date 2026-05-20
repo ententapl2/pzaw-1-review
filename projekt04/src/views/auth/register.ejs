@@ -37,10 +37,12 @@
                             <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                             <div class="auth__fields">
                                 <label for="username" class="auth__label">Nazwa użytkownika:</label>
+                                <!-- ... -->
                                 <!-- pattern="[a-zA-Z0-9_ąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+" minlength="3" maxlength="20" -->
                                 <input type="input" id="username" name="username" placeholder="np. janusz_32"
                                     class="input input--primary" autocomplete="username" required autofocus>
                                 <label for="password" class="auth__label">Hasło:</label>
+                                <!-- ... -->
                                 <!-- pattern="(?=.*[A-Z])(?=.*\d).{5,64}" minlength="5" maxlength="64"  -->
                                 <input type="password" id="password" name="password" placeholder="np. hasloJanusza32"
                                     class="input input--primary" autocomplete="new-password" required>
