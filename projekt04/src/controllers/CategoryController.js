@@ -57,7 +57,7 @@ export default class CategoryController {
 
     postDelete(req, res) {
         if (!req.user) throw new UnauthorizedError("Nie można wykonać tej operacji bez logowania");
-        if (req.is_game_active) throw new ForbiddenError("Nie można dodawać kategorii w trakcie gry!");
+        if (req.is_game_active) throw new ForbiddenError("Nie można USUWAĆ kategorii w trakcie gry!");
 
         const category_id = req.body?.category_id;
         if (!category_id) {
