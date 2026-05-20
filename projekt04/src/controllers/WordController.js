@@ -91,6 +91,20 @@ export default class WordController {
         privateCategories.forEach(category => {
             category.words = this.#wordService.getWordsByCategory(category.id);
         });
+        /* 
+        SELECT 
+            words.id, 
+            words.name, 
+            categories.id,
+            categories.name,
+            categories.author_id 
+        FROM 
+            categories 
+        LEFT JOIN words ON words.category_id = categories.id 
+        WHERE
+            categories.author_id = ?
+
+        */
 
         return res.render("word/list", { title: "Zgadywanka - Osobista lista słów", is_public_view: false, categories: privateCategories, is_admin: false });
     }
