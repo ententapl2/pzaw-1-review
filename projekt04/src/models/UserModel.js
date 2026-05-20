@@ -20,7 +20,7 @@ export default class UserModel {
         this.#add_user = db.prepare(`INSERT INTO users (username, passhash, role_id) VALUES (?, ?, ?) RETURNING username, role_id, id`);
         this.#delete_user_by_id = db.prepare(`DELETE FROM users WHERE id = ?`);
         this.#get_default_role_id = db.prepare(`SELECT id FROM roles WHERE name = ?`);
-        this.#get_default_admin_role_id = db.prepare(`SELECT id FROM roles WHERE name = ?`);
+        this.#get_default_admin_role_id = db.prepare(`SELECT id FROM roles WHERE name = ?`); // ...
     }
 
     // Database CRUD
