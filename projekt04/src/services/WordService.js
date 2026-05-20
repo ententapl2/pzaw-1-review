@@ -41,7 +41,7 @@ export default class WordService {
         if (!categoryNameValidation.is_valid || typeof authorId != 'number' || typeof isPublic !== 'boolean') {
             throw new BadRequestError(`Przesłano nieprawidłową nazwę kategorii (${name})`, validationErrors);
         }
-        this.#wordModel.addCategory(name, authorId, isPublic == true ? 1 : 0);
+        this.#wordModel.addCategory(formattedWord, authorId, isPublic == true ? 1 : 0);
     }
 
     deleteCategory(categoryId, user, adminRoleId) {
