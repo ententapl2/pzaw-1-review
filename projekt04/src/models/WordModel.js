@@ -1,4 +1,4 @@
-import { db } from "../database/createDatabase.js";
+    import { db } from "../database/createDatabase.js";
 
 export default class WordModel {
 
@@ -148,7 +148,9 @@ export default class WordModel {
             query += " WHERE " + queryConditions.join(" AND ");
         }
 
-        query += " ORDER BY RANDOM() LIMIT 1";
+        query += " AND words.id >= (1 + ABS(RANDOM()) % (SELECT MAX(id) FROM words)) "
+        query += " ORDER BY words.id LIMIT 1";
+        
 
         return db.prepare(query).get(...params);
     }
