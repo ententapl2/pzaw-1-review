@@ -1,6 +1,6 @@
 import express from "express";
 import session from "express-session";
-import csrf from "@dr.pogodin/csurf";
+import csrf from "@dr.pogodin/csurf"; /* ... */
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
