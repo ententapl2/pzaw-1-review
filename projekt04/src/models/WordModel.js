@@ -1,5 +1,6 @@
-    import { db } from "../database/createDatabase.js";
+import { db } from "../database/createDatabase.js";
 
+// WordRepo
 export default class WordModel {
 
     // CRUD fields

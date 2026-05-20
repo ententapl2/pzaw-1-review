@@ -1,6 +1,7 @@
 import { db } from "../database/createDatabase.js";
 import { DEFAULT_ADMIN_ROLE, DEFAULT_ROLE } from "../utils/defaultValues.js";
 
+// UserRepo
 export default class UserModel {
 
     // CRUD fields
