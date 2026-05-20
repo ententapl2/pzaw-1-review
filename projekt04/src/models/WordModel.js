@@ -148,8 +148,7 @@ export default class WordModel {
             query += " WHERE " + queryConditions.join(" AND ");
         }
 
-        query += " AND words.id >= (1 + ABS(RANDOM()) % (SELECT MAX(id) FROM words)) "
-        query += " ORDER BY words.id LIMIT 1";
+        query += " ORDER BY RANDOM() LIMIT 1";
         
 
         return db.prepare(query).get(...params);
